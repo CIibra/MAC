@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Adhésion – MAC</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<script src="script.js"></script>
+<body>
+    <header>
+    <nav class="navbar">
+      <div class="logo"><img src="logo_mac.png" alt="Logo MAC"></div>
+      <ul class="menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="missions.html"><i class="fas fa-bullseye"></i> Missions </a></li>
+        <!--<li><a href="actualites.html"><i class="fas fa-newspaper"></i> Actualités</a></li>-->        
+        <li><a href="equipe.html"><i class="fas fa-users"></i> Qui sommes-nous</a></li>
+        <li><a href="adhesion.html"><i class="fas fa-user-plus"></i> ️ Adhérer </a></li>
+      </ul>
+      <div class="burger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav> 
+  </header>
+
+  <section>
+    <h1>✍️ Rejoindre le Mouvement</h1>
+    <form action="traitement.php" method="POST">
+      <label>Nom complet :</label>
+      <input type="text" name="nom" required>
+
+      <label>Email :</label>
+      <input type="email" name="email" required>
+
+      <label>Téléphone :</label>
+      <input type="tel" name="telephone">
+
+      <label>Ville / Région :</label>
+      <input type="text" name="region">
+
+      <label>Âge :</label>
+      <input type="number" name="age" min="15" max="99">
+
+      <label>Pourquoi souhaitez-vous adhérer ?</label>
+      <textarea name="motivation" rows="4"></textarea>
+
+      <label>Disponibilité :</label>
+      <select name="disponibilite">
+        <option value="régulière">Régulière</option>
+        <option value="ponctuelle">Ponctuelle</option>
+        <option value="à distance">À distance</option>
+      </select>
+
+      <button type="submit">Envoyer ma demande</button>
+    </form>
+  </section>
+  <script src="js/script.js"></script>
+</body>
+</html>
