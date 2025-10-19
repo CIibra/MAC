@@ -5,19 +5,18 @@
   <title>Adhésion – MAC</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
-<script src="script.js"></script>
 <body>
-    <header>
+  <header>
     <nav class="navbar">
-      <div class="logo"><img src="logo_mac.png" alt="Logo MAC"></div>
+      <div class="logo">
+        <a href="index.html"><img src="logo_mac.png" alt="Logo MAC"></a>
+      </div>
       <ul class="menu">
         <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-        <li><a href="missions.html"><i class="fas fa-bullseye"></i> Missions </a></li>
-        <!--<li><a href="actualites.html"><i class="fas fa-newspaper"></i> Actualités</a></li>-->        
+        <li><a href="missions.html"><i class="fas fa-bullseye"></i> Missions</a></li>
         <li><a href="equipe.html"><i class="fas fa-users"></i> Qui sommes-nous</a></li>
-        <li><a href="adhesion.html"><i class="fas fa-user-plus"></i> ️ Adhérer </a></li>
+        <li><a href="adhesion.html"><i class="fas fa-user-plus"></i> Adhérer</a></li>
       </ul>
       <div class="burger">
         <i class="fas fa-bars"></i>
@@ -27,35 +26,40 @@
 
   <section>
     <h1>✍️ Rejoindre le Mouvement</h1>
-    <form action="traitement.php" method="POST">
-      <label>Nom complet :</label>
-      <input type="text" name="nom" required>
+	<form action="https://script.google.com/macros/s/AKfycbwhGLtSmcO-n-K1SoakPZh8UiTpRQlXDJYym0IUpcc9EwxD88mxsOvcEcbqa1CRY-Wl/exec" method="POST">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
 
-      <label>Email :</label>
-      <input type="email" name="email" required>
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required>
 
-      <label>Téléphone :</label>
-      <input type="tel" name="telephone">
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email">
 
-      <label>Ville / Région :</label>
-      <input type="text" name="region">
+      <label for="telephone">Téléphone :</label>
+      <input type="tel" id="telephone" name="telephone">
 
-      <label>Âge :</label>
-      <input type="number" name="age" min="15" max="99">
+      <label for="region">Ville / Région :</label>
+      <input type="text" id="region" name="region">
 
-      <label>Pourquoi souhaitez-vous adhérer ?</label>
-      <textarea name="motivation" rows="4"></textarea>
+      <label for="age">Âge :</label>
+      <input type="number" id="age" name="age" min="14" max="99">
 
-      <label>Disponibilité :</label>
-      <select name="disponibilite">
+      <label for="motivation">Pourquoi souhaitez-vous adhérer ?</label>
+      <textarea id="motivation" name="motivation" rows="4"></textarea>
+
+      <label for="disponibilite">Disponibilité :</label>
+      <select id="disponibilite" name="disponibilite">
         <option value="régulière">Régulière</option>
         <option value="ponctuelle">Ponctuelle</option>
         <option value="à distance">À distance</option>
       </select>
+	  <input type="hidden" name="mac_token" value="MAC2025SECRET">
 
       <button type="submit">Envoyer ma demande</button>
     </form>
   </section>
-  <script src="js/script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
