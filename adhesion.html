@@ -25,40 +25,43 @@
   </header>
 
   <section>
-    <h1>✍️ Rejoindre le Mouvement</h1>
-	<form action="https://script.google.com/macros/s/AKfycbwhGLtSmcO-n-K1SoakPZh8UiTpRQlXDJYym0IUpcc9EwxD88mxsOvcEcbqa1CRY-Wl/exec" method="POST">
-      <label for="nom">Nom :</label>
-      <input type="text" id="nom" name="nom" required>
+  <h1>✍️ Rejoindre le Mouvement</h1>
+  <form action="https://script.google.com/macros/s/AKfycbxm0NW_nL7G-pjCLSPqj0gFhA3HYJp_nsTi11fkMEabhdg5IArogRqrvkqEYnILTILL/exec" method="POST" accept-charset="UTF-8" autocomplete="on">
+    
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
 
-      <label for="prenom">Prénom :</label>
-      <input type="text" id="prenom" name="prenom" required>
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
 
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email">
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email">
 
-      <label for="telephone">Téléphone :</label>
-      <input type="tel" id="telephone" name="telephone">
+    <label for="telephone">Téléphone :</label>
+    <input type="tel" id="telephone" name="telephone" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required>
 
-      <label for="region">Ville / Région :</label>
-      <input type="text" id="region" name="region">
+    <label for="region">Ville / Région :</label>
+    <input type="text" id="region" name="region">
 
-      <label for="age">Âge :</label>
-      <input type="number" id="age" name="age" min="14" max="99">
+    <label for="age">Âge :</label>
+    <input type="number" id="age" name="age" min="14" max="99">
 
-      <label for="motivation">Pourquoi souhaitez-vous adhérer ?</label>
-      <textarea id="motivation" name="motivation" rows="4"></textarea>
+    <label for="motivation">Pourquoi souhaitez-vous adhérer ?</label>
+    <textarea id="motivation" name="motivation" rows="4"></textarea>
 
-      <label for="disponibilite">Disponibilité :</label>
-      <select id="disponibilite" name="disponibilite">
-        <option value="régulière">Régulière</option>
-        <option value="ponctuelle">Ponctuelle</option>
-        <option value="à distance">À distance</option>
-      </select>
-	  <input type="hidden" name="mac_token" value="MAC2025SECRET">
+    <label for="disponibilite">Disponibilité :</label>
+    <select id="disponibilite" name="disponibilite">
+      <option value="régulière">Reguliere</option>
+      <option value="ponctuelle">Ponctuelle</option>
+      <option value="à distance">À distance</option>
+    </select>
 
-      <button type="submit">Envoyer ma demande</button>
-    </form>
-  </section>
+    <input type="hidden" name="mac_token" value="MAC2025SECRET">
+
+    <button type="submit">Envoyer ma demande</button>
+  </form>
+</section>
+
  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Mouvement Avenir Citoyen – Tous droits réservés</p>
