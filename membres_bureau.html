@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Équipe de Bureau - [Nom de l'Association]</title>
+    
+    <style>
+        /*
+            Paramètres Généraux
+        */
+        body {
+            /* Fond dégradé orange-vert sur l'ensemble du corps de la page */
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /*
+            Conteneur de la Page A4
+        */
+        .a4-page {
+            /* Dimensions standards d'une feuille A4 (approximativement) */
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm; /* Marge interne pour le contenu */
+            background-color: white; /* Fond blanc pour la "feuille" */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Ombre légère pour effet relief */
+            box-sizing: border-box;
+            position: relative; /* Pour placer le tampon */
+        }
+
+        /*
+            En-tête (Logo et Titre)
+        */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-bottom: 2px solid #A2CC00;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 140px; /* Taille du logo à gauche */
+            height: auto;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            font-size: 2em;
+            color: #008000; /* Couleur verte pour le titre */
+            font-weight: bold;
+            margin: 0;
+			padding-top : 100px;
+			text-align:center;
+			justify-content:center; 
+			
+        }
+
+        /*
+            Liste des Membres
+        */
+        .team-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Espace bien aéré entre chaque membre */
+        }
+
+        .member {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px; /* Marge entre la photo (gauche) et la description (droite) */
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            background-color: #FAFAFA;
+        }
+
+        .member-photo {
+            flex-shrink: 0; /* Empêche la photo de se rétrécir */
+        }
+
+        .member-photo img {
+            width: 100px; /* Taille de la photo */
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+			border: 1px solid green;  
+        }
+
+        .member-description {
+            flex-grow: 1; /* Prend l'espace restant */
+            margin-left: 10px; /* Marge supplémentaire pour bien espacer */
+        }
+
+        .member-description h2 {
+            color: #FF6B00; /* Nom/rôle en couleur orange */
+            font-size: 1.3em;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .member-description p {
+            line-height: 1.5;
+            margin-top: 0;
+        }
+
+        /*
+            Pied de Page (Tampon)
+        */
+        footer {
+            position: absolute;
+            bottom: 20mm; /* En bas, aligné avec la marge A4 */
+            right: 20mm; /* À droite, aligné avec la marge A4 */
+            width: 150px;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .stamp {
+            /* Style pour simuler un "tampon" */
+            border: 2px dashed #008000;
+            padding: 5px;
+            border-radius: 10px;
+            transform: rotate(2deg);
+        }
+
+        .stamp p {
+            font-size: 0.8em;
+            color: #008000;
+            font-style: italic;
+            margin: 5px 0;
+        }
+        
+        /* Si vous utilisez une image pour le tampon */
+        .stamp img {
+            width: 80px;
+            height: auto;
+            display: block;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        <header>
+            <img src="logo_mac.png" alt="Logo de l'Association" class="logo">
+            <h1>**Le Bureau du MAC**</h1>
+        </header>
+        
+        <hr/> <section class="team-list">
+            
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre1.png" alt="Photo de Membre 1">
+                </div>
+                <div class="member-description">
+                    <h2>Président : CISSE Ibrahim</h2>
+                    <p>
+                        Responsable légal et moral de l'association, il assure le bon fonctionnement et la représentation.
+                        <br><br>
+                         <strong>Spécialiste modélisation et simulation numérique</strong> : <a href = "https://cissenumericalsimulations.pages.dev/" target = "_blank" > Voir ici</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre3.png" alt="Photo de Membre 2">
+                </div>
+                <div class="member-description">
+                    <h2>Sécrétaire général : CAMARA Karamo</h2>
+                    <p>
+                        Responsable de l'administration, de la rédaction des procès-verbaux et de la correspondance.
+                        <br><br>
+                        <strong>Ingénieur d'études</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre2.png" alt="Photo de Membre 3">
+                </div>
+                <div class="member-description">
+                    <h2>Trésorier : BERTHE Lacine</h2>
+                    <p>
+                        Gère les finances, les comptes bancaires et la trésorerie de l'association.
+                        <br>
+                        <br>
+						<strong>Ingénieur informatique</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre5.png" alt="Photo de Membre 4">
+                </div>
+                <div class="member-description">
+                    <h2>CISSE Abdul Khader</h2>
+                    <p>
+                        Réprésentant local et chargé mobilisation
+                        <br><br>
+						<strong>BTS en compabilité gestion</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre4.png" alt="Photo de Membre 5">
+                </div>
+                <div class="member-description">
+                    <h2>TOGO AMANDINGNIN</h2>
+                    <p>
+                        Réprésentant local et responsable projets.
+                        <br>
+                        <br>
+						<strong> Professeur de Mathématiques au Lycée et entrepreneur</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre8.png" alt="Photo de Membre 6">
+                </div>
+                <div class="member-description">
+                    <h2>DAO Issouf</h2>
+                    <p>  Responsable innovation technologique
+                        <br>
+						<br>
+						<strong>Ingénieur efficacité énergétique</strong>
+					</p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre7.png" alt="Photo de Membre 7">
+                </div>
+                <div class="member-description">
+                    <h2>SADIA Bassirou Emmanuel</h2>
+                    <p>  Réprésentant local et porte parole national
+                        <br>
+						<br>
+                    <strong>Professeur de Mathématiques au Lycée</strong>
+					</p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre6.png" alt="Photo de Membre 8">
+                </div>
+                <div class="member-description">
+                    <h2>DOSSO Souleymane David</h2>
+                    <p> Réprésentant local 
+						<br>
+					    <br>
+                        <strong>Professeur de Mathématiques au Lycée</strong>
+					</p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre9.png" alt="Photo de Membre 9">
+                </div>
+                <div class="member-description">
+                    <h2>Membre du Bureau : Nom Prénom 9</h2>
+                    <p>
+                        **Rôle :** Soutien général aux activités du bureau et aux initiatives bénévoles.
+                        <br>
+                        **Description :** [Ajouter une courte biographie ou une motivation ici.]
+                    </p>
+                </div>
+            </div>
+
+            <div class="member">
+                <div class="member-photo">
+                    <img src="membre10.png" alt="Photo de Membre 10">
+                </div>
+                <div class="member-description">
+                    <h2>Membre du Bureau : Nom Prénom 10</h2>
+                    <p>
+                        **Rôle :** Coordination des volontaires et gestion des adhésions.
+                        <br>
+                        **Description :** [Ajouter une courte biographie ou une motivation ici.]
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+</body>
+</html>

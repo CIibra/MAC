@@ -1,613 +1,1784 @@
-/* RESET */
+/* ========================================================= */
+/* --- 0. RESET ET MISE EN PAGE GLOBALE --- */
+/* ========================================================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body, html {
-  width: 100%;
-  height: 100%;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fdfdfd;
-  color: #333;
-  line-height: 1.6;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* NAVBAR */
+/* SECTIONS (Applique la largeur max et le centrage à toutes les balises <section>) */
+section {
+    padding: 60px 20px;
+    max-width: 1000px; /* Largeur maximale de contenu */
+    margin: auto; /* Centrage */
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    color: #2e7d32; /* Couleur dominante Vert */
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li i {
+    margin-right: 8px;
+    color: #2e7d32;
+}
+
+/* ========================================================= */
+/* --- 1. NAVIGATION & HEADER --- */
+/* ========================================================= */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
 .logo img {
-  height: 120px;
-  margin-left: 10px;
+    height: 120px;
+    margin-left: 10px;
 }
 
 /* MENU */
 .menu {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin-right: 10px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-right: 10px;
+    z-index: 1000;
 }
 
 .menu li a {
-  text-decoration: none;
-  color: #2e7d32;
-  font-weight: bold;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
 }
 
 .menu li a i {
-  margin-right: 6px;
-  font-size: 18px;
+    margin-right: 6px;
+    font-size: 18px;
 }
 
 /* BURGER MENU */
 .burger {
-  display: none;
-  font-size: 26px;
-  color: #2e7d32;
-  cursor: pointer;
+    display: none;
+    font-size: 26px;
+    color: #2e7d32;
+    cursor: pointer;
+    z-index: 1300;
+    position: relative;
 }
 
 /* HERO */
 .hero {
-  background: url('elephant.png') center/cover no-repeat;
-  width: 100vw;
-  height: 80vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center; 
+    background: url('elephant.png') center/cover no-repeat;
+    width: 100vw;
+    height: 80vh;
+    display: flex; /* Assurez-vous que le hero est bien affiché en flex */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;	
 }
 
 .hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px; 
-  text-align:center;
+    font-size: 36px;
+    margin-bottom: 10px;	
+    color: green; /* Titre du HERO en blanc */
 }
 
 .hero p {
-  font-size: 20px;
-  margin-bottom: 20px;
-  text-align:center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family : 'Comic Sans MS', cursive;
+	font-weight:bold;
 }
 
-/* SECTIONS */
-section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-  background-color: #f9f9f9;
-}
-
-h1, h2 {
-  color: #2e7d32;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-ul li i {
-  margin-right: 8px;
-  color: #2e7d32;
-}
+/* ========================================================= */
+/* --- 2. SECTIONS CONTENU (Vision, Membres, Formulaire, etc.) --- */
+/* ========================================================= */
 
 /* VISION & INDUSTRIE */
 .vision {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding-bottom : 0px;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom : 30px;
+    align-items: center;
 }
 
 .vision .text,
 .vision .image {
-  flex: 1;
+    flex: 1;
+}
+.vision .text li {
+	color : #2c3e50;
 }
 
 .vision img {
-  width: 100%;
+    width: 100%;
 }
 
 /* MEMBRES */
 .membre img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .membre button {
-  background-color: #2e7d32;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .membre button:hover {
-  background-color: #1b5e20;
+    background-color: #1b5e20;
 }
 
 /* MODALE */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.6);
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 500px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .modal-content h3 {
-  margin-bottom: 10px;
-  color: #2e7d32;
+    margin-bottom: 10px;
+    color: #2e7d32;
 }
 
 .modal-content p {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover {
-  color: black;
+    color: black;
 }
+ 
 
-#equipe h2 {
+#qui-sommes-nous {
   text-align: center;
-  margin-bottom: 80px; 
+  font-family: 'Open Sans', sans-serif;
+  color: #333; 
 }
 
-.fondateur {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  margin-bottom: 40px;
+ 
+/* --- Styles Généraux et Conteneur --- */
+
+/* Importation d'une police Google Fonts pour un look moderne */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Définition des nouvelles variables de couleur pour une gestion facile */
+:root {
+    --color-primary: #2c3e50;    /* Bleu foncé - Structure */
+    --color-accent-blue: #3498db; /* Bleu clair - Rôles / Bordures */
+    --color-accent-green: #27ae60; /* Vert - Accent 1 (dynamisme/croissance) */
+    --color-accent-orange: #e67e22; /* Orange - Accent 2 (chaleur/créativité) */
+    --color-background: #f4f7f6;
+    --color-text-dark: #333;
+    --color-text-light: #666;
 }
 
-.fondateur .photo img {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
 }
 
-.fondateur .profil {
-  flex: 1;
-  text-align: justify;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.fondateur .profil h3 {
-  margin-bottom: 10px;
-  color: #2e7d32;
-  font-size: 20px;
+ 
+/* --- Grille du Bureau --- */
+
+.bureau-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+	
 }
 
-.fondateur .profil i {
-  margin-right: 8px;
-  color: #2e7d32;
+/* --- Style de la Fiche Membre --- */
+
+.member-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    /* Ajout d'une bordure subtile en bas */
+    border-bottom: 5px solid var(--color-accent-green); 
 }
 
-/* Responsive mobile */
-@media screen and (max-width: 768px) {
-  .fondateur {
-    flex-direction: column;
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* Bordure maintenant en Orange pour plus de contraste */
+    border: 3px solid var(--color-accent-orange); 
+    box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.3); /* Effet d'éclat autour de l'orange */
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.member-card h2 {
+    font-size: 1.3em;
+    color: var(--color-text-dark);
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+.member-card .role {
+    color: var(--color-accent-blue); /* Gardons le bleu pour la clarté du rôle */
+    font-weight: 700;
+    margin: 5px 0 10px;
+    font-size: 0.95em;
+}
+
+.member-card .bio {
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    height: 40px;
+    line-height: 1.4;
+    overflow: hidden;
+}
+
+
+
+
+/* --- Styles de la section Partenaires --- */
+
+.partners-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: white; /* Fond blanc pour séparer de la section CTA */
+}
+
+.section-title {
+    font-size: 2em;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-  }
+    flex-wrap: wrap;
+    gap: 40px;
+}
 
-  .fondateur .profil {
+.partner-logo-link {
+    display: block;
+    max-width: 150px; /* Taille maximale du logo */
+    padding: 10px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.partner-logo-link:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.partner-logo-link img {
+    width: 100%;
+    height: auto;
+    /* Assombrir ou griser les logos pour l'esthétique, puis les éclaircir au survol */
+    filter: grayscale(80%) opacity(70%);
+    transition: filter 0.3s;
+}
+
+.partner-logo-link:hover img {
+    filter: grayscale(0%) opacity(100%);
+}
+
+/* --- Styles de la section Appel à l'Action (CTA) --- */
+
+.cta-section {
+    background-color: var(--color-primary); /* Fond Bleu Foncé */
+    color: white;
+    /* padding: 3px 0; */
     text-align: center;
+}
+ 
+
+.cta-content p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-button {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    letter-spacing: 1px;
+}
+
+/* Bouton Principal : Vert */
+.primary-btn {
+    background-color: var(--color-accent-green);
+    color: white;
+    border: 2px solid var(--color-accent-green);
+}
+
+.primary-btn:hover {
+    background-color: #2ecc71; /* Vert légèrement plus clair */
+    border-color: #2ecc71;
+}
+
+/* Bouton Secondaire : Orange */
+.secondary-btn {
+    background-color: var(--color-accent-orange);
+    color: white;
+    border: 2px solid var(--color-accent-orange);
+}
+
+.secondary-btn:hover {
+    background-color: #f39c12; /* Orange légèrement plus clair */
+    border-color: #f39c12;
+}
+
+
+/* --- Variables et Styles Généraux --- */
+
+/* Assurez-vous d'avoir ces variables de couleur définies, comme dans la réponse précédente */
+:root {
+    --color-primary: #2c3e50;       /* Bleu foncé */
+    --color-accent-blue: #3498db;   /* Bleu clair/Tech */
+    --color-accent-green: #27ae60;  /* Vert/Validation */
+    --color-accent-orange: #e67e22; /* Orange/Social */
+    --color-background: #f4f7f6;
+    --color-text-dark: #333;
+    --color-text-light: #666;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: var(--color-background);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--color-primary);
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+}
+
+/* --- 1. Header (Titre) --- */
+
+.donation-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.donation-header h1 {
+    font-size: 2.8em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.donation-header .subtitle {
+    font-size: 1.3em;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+/* --- 2. Section Impact Multi-Piliers --- */
+
+.impact-section {
+    padding: 60px 0;
+}
+
+.piliers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.pilier-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-top: 5px solid transparent; /* Sera défini par data-color */
+}
+
+.pilier-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.pilier-card p {
+    color: var(--color-text-light);
+    font-size: 0.95em;
+}
+
+.pilier-card .icon {
+    font-size: 2.5em;
+}
+
+/* Couleurs spécifiques aux piliers */
+.pilier-card[data-color="orange"] { border-top-color: var(--color-accent-orange); }
+.pilier-card[data-color="green"] { border-top-color: var(--color-accent-green); }
+.pilier-card[data-color="blue"] { border-top-color: var(--color-accent-blue); }
+
+
+/* --- 3. Formulaire de Don --- */
+
+.donation-form-section {
+    padding: 40px 0 80px;
+    background-color: var(--color-background);
+}
+
+.form-container { 
+    gap: 40px;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-heading {
+    grid-column: 1 / span 2; /* Le titre prend les deux colonnes */
+    margin-bottom: 30px;
+}
+
+/* Styles des groupes de champs */
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+    font-size: 1.1em;
+}
+
+/* Options Fréquence */
+.freq-options, .amount-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.freq-btn, .amount-btn {
+    flex-grow: 1;
+    padding: 12px 15px;
+    background: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.freq-btn.active, .amount-btn.active {
+    background-color: var(--color-accent-blue);
+    color: white;
+    border-color: var(--color-accent-blue);
+}
+
+.amount-custom {
+    flex-grow: 1.5; /* Donne plus de place au champ libre */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.amount-description {
+    font-style: italic;
+    color: var(--color-text-light);
+    min-height: 20px; /* Assure que le texte ne déplace pas les éléments */
+}
+
+/* Informations Personnelles (Inputs) */
+.contact-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Paiement */
+.payment-group {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+.payment-title {
+    font-size: 1.1em;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+.security-text {
+    font-size: 0.9em;
+    color: var(--color-accent-green);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.payment-logos {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    /* Placeholder pour les vrais logos */
+}
+.logo-placeholder {
+    font-size: 0.8em;
+    border: 1px solid #ccc;
+    padding: 5px 8px;
+    border-radius: 3px;
+    color: #999;
+}
+
+
+/* Bouton de Soumission (Bouton d'Action VERT) */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-accent-green);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #2ecc71; /* Vert légèrement plus clair */
+}
+
+/* Avantage Fiscal (Section Aside) */
+.fiscal-benefit {
+    grid-column: 2 / 3; /* Se place dans la deuxième colonne */
+    background-color: #fff8f0; /* Fond très clair pour l'attirer l'oeil */
+    border: 2px solid var(--color-accent-orange);
+    padding: 25px;
+    border-radius: 8px;
+    align-self: start; /* S'aligne en haut de la colonne */
+}
+
+.fiscal-benefit h3 {
+    color: var(--color-accent-orange);
+    margin-top: 0;
+}
+
+.fiscal-benefit p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+
+/* --- Media Queries (Adaptation mobile) --- */
+
+@media (max-width: 900px) {
+    .piliers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .form-container {
+        /* Sur tablette, le formulaire devient mono-colonne */
+        grid-template-columns: 1fr; 
+    }
+    .fiscal-benefit {
+        grid-column: 1 / 2; /* L'avantage fiscal passe sous le formulaire */
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .piliers-grid {
+        grid-template-columns: 1fr;
+    }
+    .donation-header h1 {
+        font-size: 2em;
+    }
+    .freq-options, .amount-options {
+        flex-direction: column;
+    }
+}
+
+/* --- Styles de la Section Proximité (Liste) --- */
+
+.proximite-section-liste {
+    padding: 40px 20px;
+    background-color: #ffffff; /* Fond blanc */
+    text-align: center;
+}
+
+.slogan-proximite-liste {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #34495e;
+    margin-bottom: 30px;
+}
+
+.exemples-titre-liste {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Grille pour les actions (2 colonnes sur grand écran) */
+.actions-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+    gap: 20px 20px; /* Espace vertical et horizontal */
+    max-width: 900px;
+    margin: 0 auto 20px auto; /* Centrer la grille */
+    text-align: left;
+}
+
+/* Style de chaque élément de la liste */
+.action-detail-item {
+    padding: 2px 0;
+    border-bottom: 2px solid #e0e0e0; /* Séparateur léger */
+}
+
+/* Titre de l'action */
+.action-detail-item h4 {
+    font-size: 1em;
+    color: #3498db; /* Couleur d'accentuation */
+    margin-bottom: 2px; 
+}
+
+/* Description de l'action */
+.action-detail-item p {
+    color: #607d8b;
+    font-size: 1em; 
+}
+
+/* Media Query pour les petits écrans (une seule colonne) */
+@media (max-width: 768px) {
+    .actions-details-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        gap: 20px;
+    }
+}
+
+/* Styles du bouton CTA (réutilisé de la carte précédente) */
+.cta-darker {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #34495e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-darker:hover {
+    background-color: #2c3e50;
+}
+/* Media Query pour les boutons sur mobile */
+@media (max-width: 576px) {
+    .cta-buttons {
+        flex-direction: column;
+    }
+    .cta-button {
+        width: 100%;
+    }
+}
+/* --- Liens Sociaux (Icônes) --- */
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    color: var(--color-text-light);
+    font-size: 1.2em;
+    margin: 0 5px;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--color-accent-green); /* Changement de couleur au survol en Vert */
+}
+
+/* NOTE: Les classes icon-linkedin et icon-mail sont des placeholders pour Font Awesome */
+.icon-linkedin::before { content: 'in'; font-family: sans-serif; font-weight: bold; font-size: 0.9em; color: var(--color-accent-blue); }
+.icon-mail::before { content: '✉'; font-size: 1.2em; }
+
+
+/* --- Media Queries (Adaptation mobile) --- */
+
+@media (max-width: 992px) {
+    /* Sur tablette, passer à 2 colonnes */
+    .bureau-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    /* Sur mobile, passer à 1 colonne */
+    .bureau-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-card .bio {
+        height: auto;
+    }
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .equipe .membre:nth-child(n+4) {
+    display: none; /* cacher après 3 membres */
+  }
+  .actions-mobile { 
+    margin: 1rem 0;
   }
 }
 
 
 /* FORMULAIRE */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
 }
 
 input, textarea, select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button[type="submit"] {
-  background-color: #2e7d32;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 button[type="submit"]:hover {
-  background-color: #1b5e20;
+    background-color: #1b5e20;
 }
 
-/* ACTUALITÉS */
-.actu {
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.actu h2 {
-  font-size: 20px;
-  color: #2e7d32;
-  margin-bottom: 10px;
-}
-
-.actu p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #444;
-}
-
-#actualites {
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-#actualites h1 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  text-align: center;
-  color: #333;
-}
-
-.illustrations {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin: 30px 0;
-  flex-wrap: wrap; /* permet le retour à la ligne sur petits écrans */
-}
-
-.illustrations img {
-  width: 200px;
-  height: 170px;
-  object-fit: cover; /* recadre sans déformer */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.illustrations img:hover {
-  transform: scale(1.05);
-}
-@media screen and (max-width: 600px) {
-  .illustrations {
-    justify-content: center;
-  }
-
-  .illustrations img {
-    width: 90%;
-    height: auto;
-  }
-}
-
-
-/* ADHESION BUTTON */
-.cta {
-  display: inline-block;
-  background-color: #ff9800;
-  color: white;
-  padding: 12px 24px;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  margin: 20px auto;
-  text-align: center;
-}
-
-.adhesion-bas {
-  text-align: center;
-  margin-top: 40px;
-}
-
-/* FOOTER */
-footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  width: 100%;
-  margin-top: auto;
-}
-
-/* ANIMATION AU SCROLL */
-.hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    gap: 20px;
-    background-color: #fff;
-    position: absolute;
-    top: 100px;
-    right: 20px;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
-
-  .menu.active {
+/* MISSIONS (Conteneurs de flexbox) */
+.missions-container {
     display: flex;
-  }
-
-  .burger {
-    display: block;
-	font-size: 26px;
-    color: #2e7d32;
-    cursor: pointer;
-    z-index: 1100;
-    position: relative;
-  }
-
-  .vision,
-  .membres {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cta {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-
-.logo img {
-  height: 200px; /* ← augmente la taille du logo */
-  margin-left: 10px;
-}
-
-  
-@media screen and (max-width: 768px) {
-  .logo img {
-    height: 80px;
-  }
-}
-
-.navbar {
-    flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
-  }
-}
-
-.missions-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px 20px;
-  flex-direction: row; /* assure que l'image reste à droite */
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-direction: row;
 }
 
 .missions-texte {
-  flex: 1 1 55%;
-  max-width: 600px;
+    flex: 1 1 55%;
+    max-width: 600px;
 }
 
 .missions-image {
-  flex: 1 1 40%;
-  max-width: 400px;
-  text-align: center;
+    flex: 1 1 40%;
+    max-width: 400px;
+    text-align: center;
 }
 
 .missions-image img {
-  width: 100%;
-  border-radius: 8px;
+    width: 100%;
+    border-radius: 8px;
 }
 
-.adhesion-bas {
-  margin-top: 30px;
-}
-
-.cta {
-  display: inline-block;
-  background-color: orange;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.missions-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px 20px;
-  flex-direction: row;
-}
-
-.missions-texte {
-  flex: 1 1 55%;
-  max-width: 600px;
-}
-
-.missions-image {
-  flex: 1 1 40%;
-  max-width: 400px;
-  text-align: center;
-}
-
-.missions-image img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.adhesion-bas {
-  margin-top: 30px;
-}
-
-.cta {
-  display: inline-block;
-  background-color: orange;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* ✅ Responsive mobile */
-@media screen and (max-width: 768px) {
-  .missions-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .missions-texte, .missions-image {
-    max-width: 100%;
-    flex: 1 1 100%;
-  }
-
-  .missions-image {
-    margin-top: 20px;
-  }
-}
-
+/* PARTENAIRES */
 #partenaires {
-  border:1px solid black;
-  padding: 0px 0px;
-  background-color: #f9f9f9;
-  text-align: center;
+    padding: 60px 20px; 
+    background-color: #f9f9f9;
+    text-align: center;
 }
 
 #partenaires h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #2e7d32;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #2e7d32;
 }
 
 #partenaires p {
-  max-width: 700px;
-  margin: 0 auto 30px;
-  font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 16px;
 }
 
 .partenaires-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 .partenaires-grid a {
-  display: block;
-  width: 140px;
-  height: 80px;
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+    display: block;
+    width: 140px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .partenaires-grid a:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .partenaires-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 10px;
-}
-
-.actu-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.actu-item {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  padding: 20px;
-  max-width: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
 }
 
 
-.burger {
-  z-index: 1300;
-  position: relative;
+/* BOUTONS ADHÉSION/CTA */
+.cta {
+    display: inline-block;
+    background-color: #ff9800; /* Orange */
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 20px auto;
+    text-align: center;
 }
-.menu {
-  z-index: 1000;
+
+.adhesion-bas {
+    text-align: center;
+    margin-top: 40px;	
+}
+
+
+/* ========================================================= */
+/* --- 3. SECTION ACTUALITÉS (CAROUSEL)  
+/* ========================================================= */
+
+/* --- Conteneur Global et Titre du Slider --- */
+#news-section {
+    /* Largeur de la section elle-même (pour le fond) */
+    padding: 40px 0;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    max-width: 100%; 
+    margin: 0; 
+}
+
+#news-section h2 {
+    font-size: 2em;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.news-slider-container {
+    position: relative;
+    overflow: hidden;
+    /* Largeur du contenu limitant le carrousel */
+    max-width: 1000px; 
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 0; /* Supprime le padding ici pour le laisser dans .news-item */
+}
+
+/* Piste de défilement */
+.news-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.news-item {
+    min-width: 100%;
+    padding: 25px; 
+    box-sizing: border-box;
+}
+
+.news-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.news-header h3 {
+    font-size: 1.6em;
+    color: #ff6347; 
+}
+
+.date {
+    color: #7f8c8d;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* --- STYLE DE GRILLE UNIFIÉ (APPLIQUÉ À TOUS LES ARTICLES) --- */
+.launch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    margin-top: 15px; 
+}
+
+.grid-item {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    position: relative; 
+    /* Hauteur minimale ajustée pour grand écran */
+    min-height: 140px; 
+    transition: transform 0.3s ease-in-out;
+    background-color: white;
+	border: 1px solid black; 
+	align-items: center; 
+	justify-content: center; /* Centre Horizontalement (résout le problème) */
+    align-items: center;     /* Centre Verticalement */
+    padding: 0;
+}
+
+/* Style des images par défaut (Lancement) : utilise COVER (rognage) */
+.launch-grid .grid-item img {
+    max-width: 100%;
+	width:auto;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.4s ease;
+	border:1px solid black;  :
+}
+
+/* Effet d'Agrandissement au Survol (Images uniquement) */
+.grid-item:not(.president-spotlight):hover {
+    transform: scale(1.03);
+}
+
+/* --- AJUSTEMENTS DE LA CARTE PRÉSIDENT (LANCEMENT) --- */
+
+.president-spotlight {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+}
+
+.content-box {
+    padding: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.president-photo {
+    /* CORRECTION : Agrandissement de la photo du président */
+    width: 140px; 
+    height: 140px;
+    border-radius: 50%;
+    /* CORRECTION : Contour de 1px (gris clair) */
+    border: 1px solid #ccc; 
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.president-photo img {
+    width: 100%;
+    height: 100%;
+    /* CORRECTION : Affichage complet (contain) dans le cercle */
+    object-fit: contain; 
+}
+
+/* --- SECTION PRINCIPALE --- */
+#actualites-section {
+    padding: 60px 0;
+    background-color: #f0f4f8; 
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#actualites-section h2 {
+    color: #2c3e50; 
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* --- CAROUSEL CONTENEUR : Espace augmenté pour les boutons --- */
+.carousel-container {
+    max-width: 1000px; 
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; 
+    padding: 0 70px; /* Plus d'espace sur les côtés pour les boutons */
+}
+
+/* --- PISTE DU CAROUSEL (Le défilant) --- */
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out; 
+    scroll-behavior: smooth; 
+}
+
+/* --- SLIDE DU CAROUSEL (Contient 2 cartes) --- */
+.carousel-slide {
+    flex: 0 0 100%; 
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    padding: 20px 0px;  	
+}
+
+/* --- CARTE D'ACTUALITÉ : BIEN BIEN ET BEAU --- */
+.actu-card {
+    background: white;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    overflow: hidden;
+    text-align: center; 
+    width: calc(50% - 10px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+	width : 40%; 
+}
+
+.actu-card:hover {
+    transform: translateY(-7px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.actu-card img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover; 
+    display: block;
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;
+}
+
+.actu-content {
+    padding: 2px 2px 1px; 
+    flex-grow: 1;  
+}
+
+/* Style des icônes */
+.actu-icon {
+    font-size: 2.8em; 
+    color: #3498db; 
+    margin-bottom: 5px;
+    display: block; 
+}
+
+.actu-content h3 {
+    color: #34495e; 
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    line-height: 1.3;
+}
+
+.actu-excerpt {
+    font-size: 0.95em;
+    color: #555;
+    margin-top: 5px;
+}
+
+.actu-date {
+    font-size: 0.85em;
+    color: #95a5a6;
+    margin-top: 15px;
+    font-weight: 600;
+    border-top: 1px solid #eee; 
+    padding-top: 10px;
+}
+
+/* --- STYLES POUR LA DIVERSITÉ DES CARTES --- */
+
+/* Carte de type "Inverse" */
+.actu-card.type-inverse img {
+    order: 2; 
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Styles pour cartes sans image */
+.actu-card.type-president-focus,
+.actu-card.type-chiffre-cle,
+.actu-card.type-focus-texte-image-like {
+    min-height: 280px; /* Assure une hauteur minimale */
+    justify-content: center; 
+}
+.type-president-focus img,
+.type-chiffre-cle img,
+.type-focus-texte-image-like img {
+    display: none;
+}
+.type-president-focus .actu-content,
+.type-chiffre-cle .actu-content,
+.type-focus-texte-image-like .actu-content {
+    padding-top: 40px; 
+    padding-bottom: 40px;
+}
+
+/* Style de citation pour le Mot du Président */
+.president-quote {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #555;
+    margin: 15px 0;
+    padding: 0 10px;
+    border-left: 3px solid #3498db; 
+}
+.actu-author {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #2c3e50;
+}
+
+/* Nouveau style : Chiffre Clé */
+.type-chiffre-cle .actu-main-icon {
+    font-size: 4em; /* Grande icône principale */
+    color: #f39c12; /* Couleur distinctive */
+    margin-bottom: 10px;
+}
+.type-chiffre-cle .chiffre {
+    font-size: 3em;
+    font-weight: bold;
+    color: #2ecc71; /* Couleur du chiffre */
+    margin-bottom: 5px;
+    line-height: 1;
+}
+.type-chiffre-cle .chiffre-label {
+    font-size: 1.2em;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+/* Style "Focus Texte - Image Like" (comme l'image que vous avez fournie) */
+.type-focus-texte-image-like .actu-icon-large {
+    font-size: 4em; /* Grosse icône en haut */
+    color: #3498db;
+    margin-bottom: 15px;
+}
+.type-focus-texte-image-like .actu-content h3 {
+    font-size: 1.8em; /* Titre plus grand */
+    margin-bottom: 15px;
+}
+.type-focus-texte-image-like .actu-excerpt {
+    font-size: 1.05em;
+    line-height: 1.6;
+    padding: 0 5px;
+}
+.type-focus-texte-image-like .actu-bottom-graph {
+    font-size: 2.5em; /* Icône de graphe plus grande en bas */
+    color: #2ecc71;
+    margin-top: 20px;
+}
+
+
+/* --- COULEURS THÉMATIQUES OPTIONNELLES POUR LES ICONES --- */
+/* (Déjà défini dans le CSS précédent, juste pour rappel) */
+.type-innovation .actu-icon { color: #f39c12; }
+.type-sport .actu-icon { color: #2ecc71; }
+.type-president-focus .actu-icon { color: #e74c3c; }
+.type-reunion .actu-icon { color: #3498db; }
+.type-developpement .actu-icon { color: #27ae60; }
+.type-formation .actu-icon { color: #9b59b6; }
+
+
+/* --- BOUTONS DE NAVIGATION : Taille et Position Finales --- */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(44, 62, 80, 0.85); 
+    color: white;
+    border: none;
+    padding: 12px 16px; /* Boutons légèrement moins "gras" */
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.6em; /* Taille de flèche légèrement réduite */
+    border-radius: 50%;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button:hover {
+    background: #3498db; 
+    transform: translateY(-50%) scale(1.1); 
+}
+
+.carousel-button.prev { left: 15px; } /* Plus loin du bord, à l'intérieur du padding */
+.carousel-button.next { right: 15px; } /* Plus loin du bord, à l'intérieur du padding */
+
+
+/* --- INDICATEURS DE POSITION (Dots) --- */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: #bdc3c7; 
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.active {
+    background-color: #3498db; 
+    transform: scale(1.3); 
+}
+
+
+
+/* --- Section Missions Alternative (2x2 cartes + Image) --- */
+
+.missions-alternative-section {
+    padding: 80px 20px;
+    background-color: #f0f4f8; /* Fond légèrement différent */
+    text-align: center;
+}
+
+/* Container général pour centrer le contenu */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Titre et description de la section */
+.section-title {
+    font-size: 2.8em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-description {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Grille principale pour les colonnes (cartes et image) */
+.missions-layout-grid {
+    display: flex;
+    gap: 40px; /* Espace entre la colonne de cartes et l'image */
+    align-items: flex-start; /* Aligne les éléments en haut */
+}
+
+/* Colonne des cartes */
+.cards-column {
+    flex: 2; /* Prend plus d'espace (ex: 2/3 de la largeur disponible) */
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espace entre les lignes de cartes */
+}
+
+/* Ligne de deux cartes */
+.cards-row {
+    display: flex;
+    gap: 30px; /* Espace entre les deux cartes d'une même ligne */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si l'espace est insuffisant */
+}
+
+/* Style de chaque carte alternative */
+.mission-card-alt {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    flex: 1 1 calc(50% - 15px); /* Chaque carte prend la moitié de la largeur moins la moitié du gap */
+    min-width: 250px; /* Largeur minimale */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.mission-card-alt:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Icônes des cartes */
+.card-icon-alt {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    display: block;
+}
+.card-icon-alt.icon-orange { color: #f39c12; }
+.card-icon-alt.icon-red { color: #e74c3c; }
+.card-icon-alt.icon-blue { color: #3498db; }
+.card-icon-alt.icon-green { color: #27ae60; }
+
+
+/* Titres des cartes */
+.mission-card-alt h3 {
+    font-size: 1.6em;
+    color: #34495e;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Paragraphes des cartes */
+.mission-card-alt p {
+    color: #607d8b;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Boutons CTA des cartes */
+.cta-button-alt {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #2980b9; /* Bleu foncé */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.cta-button-alt:hover {
+    background-color: #3498db; /* Bleu plus clair au survol */
+}
+
+/* Colonne de l'image */
+.image-column {
+    flex: 1; /* Prend 1/3 de la largeur disponible */
+    /* Assure que l'image ne dépasse pas la hauteur du conteneur si elle est trop grande */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.missions-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    object-fit: cover; /* Assure que l'image couvre bien l'espace sans déformation */
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 992px) {
+    .missions-layout-grid {
+        flex-direction: column; /* Les colonnes s'empilent */
+        gap: 30px;
+    }
+
+    .cards-column, .image-column {
+        flex: auto; /* Reprennent leur largeur normale */
+    }
+
+    .image-column {
+        order: -1; /* Place l'image au-dessus des cartes sur mobile */
+        margin-bottom: 20px; /* Ajoute un espace après l'image */
+    }
+
+    .missions-main-image {
+        max-height: 400px; /* Limite la hauteur de l'image sur mobile */
+        width: 100%; /* L'image prend toute la largeur */
+    }
+
+    .cards-row {
+        flex-direction: column; /* Les cartes s'empilent aussi */
+        gap: 20px;
+    }
+
+    .mission-card-alt {
+        min-width: 100%; /* Les cartes prennent toute la largeur */
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2em;
+    }
+    .section-description {
+        font-size: 1em;
+    }
+    .mission-card-alt h3 {
+        font-size: 1.3em;
+    }
+    .card-icon-alt {
+        font-size: 2.2em;
+    }
+}
+
+
+
+
+
+/* --- RESPONSIVITÉ (Mobile) --- */
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 0 10px; /* Moins de padding sur mobile */
+    }
+    .carousel-slide {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px; 
+    }
+    .actu-card {
+        width: 70%; 
+		height: 40%;
+    }
+    .carousel-button {
+        padding: 10px 14px;
+        font-size: 1.4em;
+        top: 55%; 
+    }
+    /* Les boutons se collent aux bords sur mobile */
+    .carousel-button.prev { left: 0px; } 
+    .carousel-button.next { right: 0px; }
+
+    /* Ajustement des cartes sans image pour le mobile */
+    .actu-card.type-president-focus,
+    .actu-card.type-chiffre-cle,
+    .actu-card.type-focus-texte-image-like {
+        min-height: 250px; 
+    }
+}
+
+/* ========================================================= */
+/* --- 4. PIED DE PAGE (FOOTER) --- */
+/* ========================================================= */
+.footer {
+    background: #f9f9f9;
+    color: #333;	
+    font-family: Arial, sans-serif;
+    text-align: center;	
+    padding: 25px 20px;
+    width:100%;
+	display: flex;
+    justify-content: center;   /* Centre horizontalement */
+    align-items: center;       /* Centre verticalement */
+	flex-direction: column; /* Aligne les enfants du footer verticalement */
+    box-sizing: border-box;
+}	
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.footer i {
+    margin-right: 8px;
+    color: #0055a5;
+}
+
+.footer-social {
+    margin-top: 22px; 
+}
+
+.footer-social a { 
+    margin: 0 10px;
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+/* Couleurs officielles */
+.footer-social a.facebook i { color: #1877F2; }
+.footer-social a.twitter i { color: #1DA1F2; }
+.footer-social a.linkedin i { color: #0A66C2; }
+.footer-social a.instagram i { color: #E4405F; }
+.footer-social a.youtube i { color: #FF0000; }
+.footer-social a.tiktok i { color: #000000; }
+
+.footer-social a:hover {
+    transform: scale(1.2);
+}
+
+
+/* ========================================================= */
+/* --- 5. RESPONSIVE DESIGN (Media Queries) --- */
+/* ========================================================= */
+
+/* ANIMATION AU SCROLL */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 900px) {
+    /* Lancement sur tablette */
+    .launch-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .president-spotlight {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+    /* CORRECTION : Hauteur légèrement réduite sur tablette pour toutes les grilles */
+    .grid-item {
+        min-height: 160px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Menu Mobile */
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #fff;
+        position: absolute;
+        top: 100px;
+        right: 20px;
+        padding: 20px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block; 
+    }
+
+    .logo img {
+        height: 80px; 
+    }
+    
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    /* Vision/Membres */
+    .vision,
+    .membres {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Équipe */
+    .fondateur {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .fondateur .profil {
+        text-align: center;
+    }
+    
+    /* Missions */
+    .missions-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .missions-texte, .missions-image {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    /* CTA */
+    .cta {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-social {
+        margin-top: 10px;
+    }
+    
+    /* Actualités sur tablette (Lancement déjà couvert) */
+    .news-item {
+        padding: 20px;
+    }
+    /* Suppression des styles .news-image-trio qui sont maintenant gérés par .launch-grid */
+}
+
+@media (max-width: 480px) {
+    /* Lancement et Grilles sur très petit écran */
+    .launch-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    .president-spotlight {
+        grid-column: span 1;
+        padding: 15px;
+    }
+    
+    /* CORRECTION : Hauteur des images sur mobile (pour ne pas être trop grosses) */
+    .grid-item {
+        min-height: 120px; 
+    }
+    /* S'assure que l'image Mentorat reste visible */
+    .launch-grid.single-img-grid .grid-item {
+        min-height: 180px; 
+    }
 }
