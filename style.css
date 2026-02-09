@@ -55,6 +55,13 @@ ul li i {
     top: 0;
     z-index: 1000;
     width: 100%;
+	display: flex;
+    justify-content: space-between; /* Espace entre le logo et le menu */
+    align-items: center;            /* <-- C'EST ÇA QUI MANQUE : Aligne tout verticalement au centre */
+    padding: 10px 5%;              /* Ajuste le padding selon tes besoins */
+    height: 90px;                   /* Fixe une hauteur pour que le Mega Menu sache où se placer */
+    position: relative;
+    background: #fff;
 }
 
 .logo img {
@@ -1884,4 +1891,5 @@ button[type="submit"]:hover {
     }
 
 }
+
 
