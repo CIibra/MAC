@@ -67,54 +67,62 @@ ul li i {
     list-style: none;
     display: flex;
     gap: 20px;
-    margin-right: 10px;
-    z-index: 1000;
     margin: 0;
     padding: 0;
-	align-items: flex-end;
+    z-index: 1000;
+    /* On enlève flex-end ici pour ne pas impacter les LI */
+    align-items: center; 
 }
 
 /* On s'assure que le lien prend toute la hauteur pour ne pas perdre le survol */
 .menu li {
     display: flex;
+    align-items: flex-end; /* <--- ALIGNE LE CONTENU VERS LE BAS */
+    height: 100%;
+    /* padding-bottom: 15px; <-- Enlevé, on va gérer l'espace sur le A */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
     align-items: center;
-    height: 100%; /* Important */
-	padding-bottom: 15px; /* <--- AJUSTE CETTE VALEUR pour régler la distance avec le bord vert */
+    margin: 0;
+    /* <--- GÈRE L'ESPACE ICI pour rapprocher du bas */
+    padding-bottom: 15px; 
+    height: 100%;
 }
 
 .has-mega-menu {
     position: static;
-    padding-bottom: 20px; /* Crée un "pont" invisible entre le lien et le menu */
-    margin-bottom: -20px; /* Compense le padding pour ne pas décaler le reste */
+    /* On enlève le padding/margin qui cassait l'alignement */
 }
 
 .mega-menu {
     display: none;
     position: absolute;
     left: 0;
-    top: 100%;
+    /* top: 100% devrait fonctionner si la navbar a une hauteur fixe */
+    top: 100%; 
     width: 100%;
     background: #ffffff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border-top: 3px solid #2e7d32; /* Bordure verte en haut */
+    border-top: 3px solid #2e7d32;
     z-index: 1200;
 }
-.menu li a {
-    text-decoration: none;
-    color: #2e7d32; /* Couleur verte actuelle */
-    font-weight: bold;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    /* On s'assure qu'il n'y a pas de margin/padding interne qui remonte le texte */
-    margin: 0;
-}
 
-.menu li a i {
-    margin-right: 6px;
-    font-size: 18px;
+/* Le "pont" pour ne pas perdre le survol */
+.has-mega-menu::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
 }
-
 .has-mega-menu:hover .mega-menu {
     display: block;
 }
@@ -1887,6 +1895,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
