@@ -107,6 +107,8 @@ ul li i {
     display: flex;
     align-items: center;
     padding: 10px 0; /* Ajout d'espace pour le survol */
+    /* On s'assure qu'il n'y a pas de margin/padding interne qui remonte le texte */
+    margin: 0;
 }
 
 .menu li a i {
@@ -1886,6 +1888,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
