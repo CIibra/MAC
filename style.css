@@ -73,6 +73,30 @@ ul li i {
     padding: 0;
 }
 
+/* On s'assure que le lien prend toute la hauteur pour ne pas perdre le survol */
+.menu li {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Important */
+}
+
+.has-mega-menu {
+    position: static;
+    padding-bottom: 20px; /* Crée un "pont" invisible entre le lien et le menu */
+    margin-bottom: -20px; /* Compense le padding pour ne pas décaler le reste */
+}
+
+.mega-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-top: 3px solid #2e7d32; /* Bordure verte en haut */
+    z-index: 1200;
+}
 .menu li a {
     text-decoration: none;
     color: #2e7d32; /* Couleur verte actuelle */
@@ -86,23 +110,6 @@ ul li i {
 .menu li a i {
     margin-right: 6px;
     font-size: 18px;
-}
-
-/* --- LOGIQUE MEGA MENU --- */
-.has-mega-menu {
-    position: static; /* Nécessaire pour étaler le menu sur toute la largeur */
-}
-
-.mega-menu {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    background: #ffffff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border-top: 3px solid #2e7d32; /* Bordure verte en haut */
-    z-index: 1200;
 }
 
 .has-mega-menu:hover .mega-menu {
@@ -1877,3 +1884,4 @@ button[type="submit"]:hover {
     }
 
 }
+
