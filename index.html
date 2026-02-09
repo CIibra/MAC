@@ -9,7 +9,7 @@
 </head>
 <body>
 
- <header>
+<header>
     <nav class="navbar">
       <div class="logo">
         <a href="index.html"><img src="logo_mac.png" alt="Logo MAC"></a>
@@ -64,12 +64,6 @@
       </div>
     </nav> 
   </header>
-
-  <section class="hero">
-    <h1>Bienvenue au Mouvement Avenir Citoyen (MAC)</h1>
-    <p>Mobiliser la jeunesse ivoirienne pour un développement durable et tourné vers l’innovation</p>
-  </section>
-
   <script>
     document.querySelectorAll('.mega-item').forEach(item => {
       item.addEventListener('mouseenter', () => {
@@ -83,12 +77,11 @@
 
     // Reset au message par défaut quand on quitte le menu
     document.querySelector('.mega-menu').addEventListener('mouseleave', () => {
-      document.querySelectorAll('.act-desc').forEach(desc => desc.classList.remove('active'));
-      document.getElementById('act-default').classList.add('active');
+    document.querySelectorAll('.act-desc').forEach(desc => desc.classList.remove('active'));
+    document.getElementById('act-default').classList.add('active');
     });
   </script>
-
-    <!-- Hero -->
+  <!-- Hero -->
   <section class="hero">
     <h1>Bienvenue au Mouvement Avenir Citoyen (MAC)</h1>
 	<p>Mobiliser la jeunesse ivoirienne pour un développement durable et tourné vers l’innovation</p>
@@ -225,4 +218,5 @@
 </html>
 </body>
 </html>
+
 
