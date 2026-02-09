@@ -71,6 +71,7 @@ ul li i {
     z-index: 1000;
     margin: 0;
     padding: 0;
+	align-items: flex-end;
 }
 
 /* On s'assure que le lien prend toute la hauteur pour ne pas perdre le survol */
@@ -78,6 +79,7 @@ ul li i {
     display: flex;
     align-items: center;
     height: 100%; /* Important */
+	padding-bottom: 15px; /* <--- AJUSTE CETTE VALEUR pour régler la distance avec le bord vert */
 }
 
 .has-mega-menu {
@@ -1884,6 +1886,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
