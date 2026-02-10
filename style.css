@@ -72,7 +72,7 @@ ul li i {
     z-index: 1000;
     /* On enlève flex-end ici pour ne pas impacter les LI */
     align-items: center;
-	margin-bottom: 0px;
+	margin-top: 100%;
 }
 
 /* On s'assure que le lien prend toute la hauteur pour ne pas perdre le survol */
