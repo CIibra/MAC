@@ -94,7 +94,7 @@ ul li i {
     align-items: center;
     margin: 0;
     /* <--- GÈRE L'ESPACE ICI pour rapprocher du bas */
-    padding-bottom: 15px; 
+    padding-bottom: 0px; 
     height: 100%;
 }
 
@@ -1898,6 +1898,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
