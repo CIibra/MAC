@@ -84,7 +84,6 @@ ul li i {
     height: 100%;
     position: relative;
 }
-
 .menu li a {
     text-decoration: none;
     color: #2e7d32;
@@ -1879,14 +1878,17 @@ button[type="submit"]:hover {
 @media (max-width: 768px) {
     /* On désactive le Mega Menu plein écran sur mobile */
     .mega-menu {
+		display: none !important; 
         position: static; /* Il s'insère dans le flux normal */
         display: block;   /* On l'affiche directement sous le lien */
-        width: 100%;
-        box-shadow: none;
-        border-top: none;
+        width: 100%; 
         padding-left: 20px; /* Décalage pour montrer que c'est un sous-menu */
+        box-shadow: none;
+        border: none;
     }
-
+	.mega-menu.open-mobile {
+        display: block !important;
+    }
     .mega-container {
         flex-direction: column; /* Tout l'un sous l'autre */
         height: auto;
@@ -1896,6 +1898,11 @@ button[type="submit"]:hover {
         background: transparent;
         padding: 0;
         width: 100%;
+    }
+	
+	.has-mega-menu > a::after {
+        content: ' ▼';
+        font-size: 12px;
     }
 
     /* On cache la partie description à droite sur mobile pour rester simple */
@@ -1929,6 +1936,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
