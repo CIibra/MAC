@@ -73,6 +73,7 @@ ul li i {
     /* On enlève flex-end ici pour ne pas impacter les LI */
     align-items: center;
 	margin-top: 4%;
+    height: 100%; /* S'assure de prendre toute la hauteur de la navbar */
 }
 
 /* On s'assure que le lien prend toute la hauteur pour ne pas perdre le survol */
@@ -1897,6 +1898,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
