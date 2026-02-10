@@ -1646,7 +1646,7 @@ button[type="submit"]:hover {
     }
 
     .missions-main-image {
-        max-height: 400px; /* Limite la hauteur de l'image sur mobile */
+        max-height: 300px; /* Limite la hauteur de l'image sur mobile */
         width: 100%; /* L'image prend toute la largeur */
     }
 
@@ -1899,6 +1899,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
