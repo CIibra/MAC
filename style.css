@@ -1813,7 +1813,6 @@ button[type="submit"]:hover {
         padding: 20px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-
     .menu.active {
         display: flex;
     }
@@ -1877,7 +1876,38 @@ button[type="submit"]:hover {
     }
     /* Suppression des styles .news-image-trio qui sont maintenant gérés par .launch-grid */
 }
+@media (max-width: 768px) {
+    /* On désactive le Mega Menu plein écran sur mobile */
+    .mega-menu {
+        position: static; /* Il s'insère dans le flux normal */
+        display: block;   /* On l'affiche directement sous le lien */
+        width: 100%;
+        box-shadow: none;
+        border-top: none;
+        padding-left: 20px; /* Décalage pour montrer que c'est un sous-menu */
+    }
 
+    .mega-container {
+        flex-direction: column; /* Tout l'un sous l'autre */
+        height: auto;
+    }
+
+    .mega-links {
+        background: transparent;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* On cache la partie description à droite sur mobile pour rester simple */
+    .mega-content {
+        display: none; 
+    }
+
+    .mega-item {
+        padding: 8px 0;
+        font-size: 16px;
+    }
+}
 @media (max-width: 480px) {
     /* Lancement et Grilles sur très petit écran */
     .launch-grid {
@@ -1899,6 +1929,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
