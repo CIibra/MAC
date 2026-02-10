@@ -72,7 +72,7 @@ ul li i {
     z-index: 1000;
     /* On enlève flex-end ici pour ne pas impacter les LI */
     align-items: center;
-	margin-top: 10%;
+	margin-top: 4%;
 }
 
 /* On s'assure que le lien prend toute la hauteur pour ne pas perdre le survol */
@@ -1897,6 +1897,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
