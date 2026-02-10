@@ -85,7 +85,6 @@ ul li i {
 }
 
 .menu li a {
-	border: 1px solid orange;
     text-decoration: none;
     color: #2e7d32;
     font-weight: bold;
@@ -1898,6 +1897,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
