@@ -1804,26 +1804,41 @@ button[type="submit"]:hover {
     .menu {
         display: none;
         flex-direction: column;
+		flex-direction: column;
+        align-items: flex-start;
         gap: 20px;
         background-color: #fff;
         position: absolute;
-        top: 100px;
-        right: 20px;
-        padding: 20px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        top: 100%; /* Se colle juste sous la navbar */
+        left: 0;
+        width: 100%; 
+        background-color: #ffffff !important; 
+        padding: 20px 0;
+        margin: 0; 
+        box-shadow: 0 15px 20px rgba(0,0,0,0.1); 
+        height: auto; 
+        max-height: 80vh; /* Évite que le menu dépasse de l'écran */
+        overflow-y: auto; /* Permet de scroller dans le menu si trop de liens */
+        z-index: 1100;
+    }
+    .menu li {
+        width: 100%; /* Chaque lien prend toute la largeur */
+        border-bottom: 1px solid #f0f0f0; /* Petite ligne séparatrice discrète */
+    }
+    .menu li a {
+        padding: 15px 25px;
+        width: 100%;
+        color: #2e7d32;
     }
     .menu.active {
         display: flex;
     }
-
     .burger {
         display: block; 
     }
-
     .logo img {
         height: 80px; 
     }
-
     /* Vision/Membres */
     .vision,
     .membres {
@@ -1936,6 +1951,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
