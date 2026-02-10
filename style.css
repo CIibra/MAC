@@ -71,8 +71,7 @@ ul li i {
     padding: 0;
     z-index: 1000;
     /* On enlève flex-end ici pour ne pas impacter les LI */
-    align-items: center; 
-	border: 1px solid black;
+    align-items: center;  
 }
 
 /* On s'assure que le lien prend toute la hauteur pour ne pas perdre le survol */
@@ -80,8 +79,8 @@ ul li i {
     display: flex;
     align-items: flex-end; /* <--- ALIGNE LE CONTENU VERS LE BAS */
     height: 100%;
-	border: 1px solid red;
-    /* padding-bottom: 15px; <-- Enlevé, on va gérer l'espace sur le A */
+    padding-bottom: 0px; 
+	margin-bottom: 0px;
 }
 
 .menu li a {
@@ -1898,6 +1897,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
