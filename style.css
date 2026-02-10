@@ -79,10 +79,9 @@ ul li i {
 /* On s'assure que le lien prend toute la hauteur pour ne pas perdre le survol */
 .menu li {
     display: flex;
-    align-items: flex-end; /* <--- ALIGNE LE CONTENU VERS LE BAS */
+    align-items: center; /* <--- ALIGNE LE CONTENU VERS LE BAS */
     height: 100%;
-    padding-bottom: 0px; 
-	margin-bottom: 0px;
+    position: relative;
 }
 
 .menu li a {
@@ -93,9 +92,10 @@ ul li i {
     display: flex;
     align-items: center;
     margin: 0;
-    /* <--- GÈRE L'ESPACE ICI pour rapprocher du bas */
     padding-bottom: 0px; 
     height: 100%;
+    padding: 10px 5px; /* Zone de clic confortable */
+    transition: 0.3s;
 }
 
 .has-mega-menu {
@@ -1898,6 +1898,7 @@ button[type="submit"]:hover {
     }
 
 }
+
 
 
 
