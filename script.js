@@ -10,13 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.classList.toggle("active");
         });
     }
-
     // Gestion du clic pour le sous-menu sur mobile
     if (hasMegaMenu) {
         hasMegaMenu.addEventListener("click", function (e) {
             if (window.innerWidth <= 768) {
+                if (e.target.tagName === 'A' || e.target.parentNode.tagName === 'A') {
+                    e.preventDefault(); 
+                }
+                
                 const mega = this.querySelector(".mega-menu");
-                if (mega) mega.classList.toggle("open-mobile");
+                if (mega) {
+                    mega.classList.toggle("open-mobile");
+                }
             }
         });
     }
@@ -165,3 +170,4 @@ document.addEventListener("DOMContentLoaded", function () {
         if (amountDescription) amountDescription.textContent = impactDescriptions['default_unique'];
     }
 });s
+
