@@ -1953,15 +1953,83 @@ button[type="submit"]:hover {
 }
 
 
+/*______________________________________________CSS PAGE_STATTO___________________________________________*/
 
+/* --- Styles de base --- */
+.sat-hero {
+    background: linear-gradient(rgba(11, 22, 42, 0.7), rgba(11, 22, 42, 0.9)), 
+                url('background-espace.jpg') center/cover no-repeat; /* AJOUTE TON IMAGE */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
+.hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+.text-green { color: #2e7d32; }
 
+.btn-cta {
+    background-color: #2e7d32;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-cta:hover { background-color: #1b5e20; }
 
+/* --- Stats --- */
+.sat-stats {
+    background-color: #0b162a;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    font-weight: bold;
+}
+.stat-item { display: flex; align-items: center; gap: 10px; }
+.stat-item i { color: #2e7d32; font-size: 1.5rem; }
+.stat-item span { font-size: 1.8rem; }
 
+/* --- Services Grid --- */
+.sat-services { padding: 60px 5%; text-align: center; background-color: #f8f9fa; }
+.sat-services h2 { font-size: 2.5rem; margin-bottom: 40px; color: #0b162a; }
 
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #2e7d32;
+}
+.service-card i {
+    font-size: 3rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+.service-card h3 { margin-bottom: 15px; color: #0b162a; }
 
-
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2rem; }
+    .sat-stats { flex-direction: column; gap: 20px; text-align: center; }
+}
 
 
 
