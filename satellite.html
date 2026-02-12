@@ -1,75 +1,86 @@
-/* --- Styles de base --- */
-.sat-hero {
-    background: linear-gradient(rgba(11, 22, 42, 0.7), rgba(11, 22, 42, 0.9)), 
-                url('background-espace.jpg') center/cover no-repeat; /* AJOUTE TON IMAGE */
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mouvement Avenir Citoyen</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo_mac.png" alt="Logo MAC"></a>
+      </div>
+	  <ul class="menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="missions.html"><i class="fas fa-bullseye"></i> Missions </a></li>
+        <!--<li><a href="actualites.html"><i class="fas fa-newspaper"></i> Actualités</a></li>-->
+        <li><a href="equipe.html"><i class="fas fa-users"></i> Qui sommes-nous</a></li>
+        <li><a href="adhesion.html"><i class="fas fa-user-plus"></i> ️ Adhérer </a></li>
+      </ul>
+      <div class="burger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav> 
+ </header> 
+ 
+<main class="rd-container">
+    <header class="rd-header">
+        <h1>Pôle Recherche & <span class="text-green">Développement</span></h1>
+        <p>Découvrez nos axes d'expertise scientifique pour un avenir durable.</p>
+    </header>
 
-.hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
-.hero-content p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
-.text-green { color: #2e7d32; }
+    <div class="rd-grid">
+        <a href="satellite.html" class="rd-card">
+            <div class="rd-icon"><i class="fas fa-satellite"></i></div>
+            <h3>Systèmes Satellites</h3>
+            <p>Télédétection et surveillance multispectrale des écosystèmes.</p>
+            <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
+        </a>
 
-.btn-cta {
-    background-color: #2e7d32;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.btn-cta:hover { background-color: #1b5e20; }
+        <a href="meca-fluides.html" class="rd-card">
+            <div class="rd-icon"><i class="fas fa-water"></i></div>
+            <h3>Mécanique des Fluides</h3>
+            <p>Modélisation hydraulique et gestion dynamique des ressources en eau.</p>
+            <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
+        </a>
 
-/* --- Stats --- */
-.sat-stats {
-    background-color: #0b162a;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    padding: 30px;
-    font-weight: bold;
-}
-.stat-item { display: flex; align-items: center; gap: 10px; }
-.stat-item i { color: #2e7d32; font-size: 1.5rem; }
-.stat-item span { font-size: 1.8rem; }
+        <a href="data-analysis.html" class="rd-card">
+            <div class="rd-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Analyse de Données</h3>
+            <p>Intelligence artificielle appliquée au traitement des données environnementales.</p>
+            <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
+        </a>
 
-/* --- Services Grid --- */
-.sat-services { padding: 60px 5%; text-align: center; background-color: #f8f9fa; }
-.sat-services h2 { font-size: 2.5rem; margin-bottom: 40px; color: #0b162a; }
+        <a href="innovation.html" class="rd-card">
+            <div class="rd-icon"><i class="fas fa-microscope"></i></div>
+            <h3>Innovation Terrain</h3>
+            <p>Développement de capteurs IoT et solutions technologiques locales.</p>
+            <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
+        </a>
+    </div>
+</main> 
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
 
-.service-card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-    border-bottom: 3px solid transparent;
-}
-.service-card:hover {
-    transform: translateY(-5px);
-    border-color: #2e7d32;
-}
-.service-card i {
-    font-size: 3rem;
-    color: #2e7d32;
-    margin-bottom: 20px;
-}
-.service-card h3 { margin-bottom: 15px; color: #0b162a; }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .hero-content h1 { font-size: 2rem; }
-    .sat-stats { flex-direction: column; gap: 20px; text-align: center; }
-}
+
+
+<footer class="footer"> 
+    <p>&copy; 2025 Mouvement Avenir Citoyen (MAC). Tous droits réservés.</p>
+    <a href="mac.asso@hotmail.com" style="color: #000000; text-decoration: none;"><i class="fas fa-envelope"></i>mac.asso@hotmail.com</a>
+
+	<div class="footer-social">
+	  <a href="https://facebook.com/mac" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+	  <a href="https://x.com/MAC225ci" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+	   <a href="https://www.instagram.com/mouvementavenircitoyen/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+	  <a href="https://www.youtube.com/channel/UCHBwafaPflgC2n2GKJMOdjQ" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+	  <a href="https://www.tiktok.com/@mouvement_avenir_citoyen" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
+	</div>
+ 
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
