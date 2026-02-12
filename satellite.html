@@ -1,111 +1,75 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MAC Satellite Solutions - Mouvement Avenir Citoyen</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-<header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html"><img src="logo_mac.png" alt="Logo MAC"></a>
-      </div>
-      
-      <ul class="menu">
-        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-        <li><a href="missions.html"><i class="fas fa-bullseye"></i> Missions</a></li>
-        
-        <li class="has-mega-menu">
-            <a href="#"><i class="fas fa-rocket"></i> Nos Activités</a>
-            <div class="mega-menu">
-                <div class="mega-container">
-                    <div class="mega-links">
-                        <a href="satellite.html" class="mega-item active">MAC Satellite</a>
-                        <a href="agritech.html" class="mega-item">MAC Agri-Tech</a>
-                        <a href="production.html" class="mega-item">MAC Production</a>
-                    </div>
-                    <div class="mega-content">
-                        <h3>MAC Satellite Solutions</h3>
-                        <p>Analyse de données spatiales pour la préservation de l'environnement et l'optimisation des ressources.</p>
-                    </div>
-                </div>
-            </div>
-        </li>
+/* --- Styles de base --- */
+.sat-hero {
+    background: linear-gradient(rgba(11, 22, 42, 0.7), rgba(11, 22, 42, 0.9)), 
+                url('background-espace.jpg') center/cover no-repeat; /* AJOUTE TON IMAGE */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-        <li><a href="equipe.html"><i class="fas fa-users"></i> Qui sommes-nous</a></li>
-        <li><a href="adhesion.html"><i class="fas fa-user-plus"></i> Adhérer</a></li>
-      </ul>
+.hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+.text-green { color: #2e7d32; }
 
-      <div class="burger">
-        <i class="fas fa-bars"></i>
-      </div>
-    </nav> 
- </header> 
+.btn-cta {
+    background-color: #2e7d32;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-cta:hover { background-color: #1b5e20; }
 
-    <main class="satellite-page">
-        <section class="sat-hero">
-            <div class="hero-content">
-                <h1>L'intelligence spatiale au service du <span class="text-green">développement durable</span>.</h1>
-                <p>Nous transformons les données satellites en décisions concrètes pour préserver nos ressources.</p>
-                <a href="#services" class="btn-cta">Découvrir nos indicateurs</a>
-            </div>
-        </section>
+/* --- Stats --- */
+.sat-stats {
+    background-color: #0b162a;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    font-weight: bold;
+}
+.stat-item { display: flex; align-items: center; gap: 10px; }
+.stat-item i { color: #2e7d32; font-size: 1.5rem; }
+.stat-item span { font-size: 1.8rem; }
 
-        <section class="sat-stats">
-            <div class="stat-item"><i class="fas fa-satellite"></i> <span>98%</span> Précision</div>
-            <div class="stat-item"><i class="fas fa-eye"></i> <span>24/7</span> Surveillance</div>
-            <div class="stat-item"><i class="fas fa-map-marked-alt"></i> <span>+10k</span> Ha Cartographiés</div>
-        </section>
+/* --- Services Grid --- */
+.sat-services { padding: 60px 5%; text-align: center; background-color: #f8f9fa; }
+.sat-services h2 { font-size: 2.5rem; margin-bottom: 40px; color: #0b162a; }
 
-        <section id="services" class="sat-services">
-            <h2>Nos Domaines d'Intervention</h2>
-            <div class="services-grid">
-                
-                <div class="service-card">
-                    <i class="fas fa-water"></i>
-                    <h3>Suivi des cours d'eau</h3>
-                    <p>Analyse du débit, détection de pollution et gestion des zones inondables.</p>
-                </div>
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-                <div class="service-card">
-                    <i class="fas fa-tree"></i>
-                    <h3>Gestion des Forêts</h3>
-                    <p>Surveillance de la déforestation en temps réel et inventaire de la biomasse.</p>
-                </div>
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: #2e7d32;
+}
+.service-card i {
+    font-size: 3rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+.service-card h3 { margin-bottom: 15px; color: #0b162a; }
 
-                <div class="service-card">
-                    <i class="fas fa-tractor"></i>
-                    <h3>Agriculture de Précision</h3>
-                    <p>Optimisation des rendements, suivi de la santé des cultures et stress hydrique.</p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fas fa-city"></i>
-                    <h3>Urbanisation</h3>
-                    <p>Cartographie de l'étalement urbain et planification des infrastructures.</p>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-<footer class="footer"> 
-    <p>&copy; 2025 Mouvement Avenir Citoyen (MAC). Tous droits réservés.</p>
-    <a href="mailto:mac.asso@hotmail.com" class="footer-mail">
-        <i class="fas fa-envelope"></i> mac.asso@hotmail.com
-    </a>
-
-    <div class="footer-social">
-      <a href="https://facebook.com/mac" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://x.com/MAC225ci" target="_blank" class="twitter"><i class="fab fa-twitter-x"></i></a> <a href="https://www.instagram.com/mouvementavenircitoyen/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/channel/UCHBwafaPflgC2n2GKJMOdjQ" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@mouvement_avenir_citoyen" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
-    </div>
-</footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2rem; }
+    .sat-stats { flex-direction: column; gap: 20px; text-align: center; }
+}
