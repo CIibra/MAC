@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* --- 1. MENU BURGER & MEGA MENU MOBILE --- */
+    /* ----------------------------------------------------------
+       1. MENU BURGER & MEGA MENU MOBILE
+    ---------------------------------------------------------- */
     const burger = document.querySelector(".burger");
     const menu = document.querySelector(".menu");
     const hasMegaMenu = document.querySelector(".has-mega-menu");
@@ -10,14 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.classList.toggle("active");
         });
     }
-    // Gestion du clic pour le sous-menu sur mobile
+
+    // Gestion du mega-menu en mobile (accordéon)
     if (hasMegaMenu) {
         hasMegaMenu.addEventListener("click", function (e) {
             if (window.innerWidth <= 768) {
+
+                // Empêche le lien parent de rediriger
                 if (e.target.tagName === 'A' || e.target.parentNode.tagName === 'A') {
-                    e.preventDefault(); 
+                    e.preventDefault();
                 }
-                
+
                 const mega = this.querySelector(".mega-menu");
                 if (mega) {
                     mega.classList.toggle("open-mobile");
@@ -26,7 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* --- 2. CARROUSEL (SLIDER) --- */
+
+    /* ----------------------------------------------------------
+       2. CARROUSEL (SLIDER)
+    ---------------------------------------------------------- */
     const container = document.querySelector('.carousel-container');
     const track = document.querySelector('.carousel-track');
     const slides = document.querySelectorAll('.carousel-slide');
@@ -35,21 +43,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const dotsContainer = document.querySelector('.carousel-dots');
 
     if (container && track && slides.length > 0) {
+
         let currentIndex = 0;
         const totalSlides = slides.length;
         let autoSlideInterval;
         const intervalTime = 5000;
 
-        // Création des indicateurs (dots)
+        // Création des dots
         slides.forEach((_, index) => {
             const dot = document.createElement('span');
             dot.classList.add('dot');
             if (index === 0) dot.classList.add('active');
+
             dot.addEventListener('click', () => {
                 stopAutoSlide();
                 moveToSlide(index);
                 startAutoSlide();
             });
+
             dotsContainer.appendChild(dot);
         });
 
@@ -101,73 +112,86 @@ document.addEventListener("DOMContentLoaded", function () {
 
         container.addEventListener('mouseenter', stopAutoSlide);
         container.addEventListener('mouseleave', startAutoSlide);
+
         window.addEventListener('resize', () => moveToSlide(currentIndex));
 
-        // Initialisation du slider
+        // Initialisation
         moveToSlide(currentIndex);
         startAutoSlide();
     }
 
-    /* --- 3. FORMULAIRE DE DON --- */
+
+    /* ----------------------------------------------------------
+       3. FORMULAIRE DE DON (si présent sur la page)
+    ---------------------------------------------------------- */
     const donationForm = document.getElementById('donationForm');
 
     if (donationForm) {
+
         const freqButtons = donationForm.querySelectorAll('.freq-btn');
         const amountButtons = donationForm.querySelectorAll('.amount-btn');
         const customAmountInput = donationForm.querySelector('.amount-custom');
         const amountDescription = document.getElementById('amount-desc');
 
         const impactDescriptions = {
-            '25': "💰 Vous offrez une trousse complète de fournitures scolaires pour un élève (Action Sociale) !",
-            '50': "🌳 Vous achetez 5 plants pour notre prochain projet de reboisement (Développement Durable).",
-            '100': "💡 Vous contribuez à l'achat d'un mini-ordinateur pour nos ateliers numériques (Technologie).",
+            '25': "💰 Vous offrez une trousse complète de fournitures scolaires pour un élève !",
+            '50': "🌳 Vous financez 5 plants pour notre projet de reboisement.",
+            '100': "💡 Vous contribuez à l'achat d'un mini-ordinateur pour nos ateliers numériques.",
             'default_unique': "Choisissez un montant ou entrez le vôtre. Votre don unique nous est précieux.",
-            'default_mensuel': "Choisissez un montant pour soutenir nos actions chaque mois et assurer leur pérennité."
+            'default_mensuel': "Choisissez un montant pour soutenir nos actions chaque mois."
         };
 
-        // Gestion des boutons de Fréquence
+        // Fréquence
         freqButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 freqButtons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
+
                 const currentFreq = btn.dataset.freq;
-                amountDescription.textContent = (currentFreq === 'mensuel') ? impactDescriptions['default_mensuel'] : impactDescriptions['default_unique'];
-                
+                amountDescription.textContent =
+                    (currentFreq === 'mensuel')
+                        ? impactDescriptions['default_mensuel']
+                        : impactDescriptions['default_unique'];
+
                 amountButtons.forEach(ab => ab.classList.remove('active'));
                 customAmountInput.value = '';
             });
         });
 
-        // Gestion des boutons de Montant
+        // Montants prédéfinis
         amountButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 amountButtons.forEach(b => b.classList.remove('active'));
                 customAmountInput.value = '';
                 btn.classList.add('active');
-                
+
                 const amount = btn.dataset.amount;
-                amountDescription.textContent = impactDescriptions[amount] || impactDescriptions['default_unique'];
+                amountDescription.textContent =
+                    impactDescriptions[amount] || impactDescriptions['default_unique'];
             });
         });
 
-        // Gestion du montant personnalisé
+        // Montant personnalisé
         customAmountInput.addEventListener('input', () => {
             amountButtons.forEach(btn => btn.classList.remove('active'));
             const value = parseInt(customAmountInput.value);
-            
+
             if (value > 0) {
-                amountDescription.textContent = `Votre don de ${value} € contribuera directement à nos actions. Merci !`;
+                amountDescription.textContent =
+                    `Votre don de ${value} € contribuera directement à nos actions. Merci !`;
             } else {
                 const activeFreq = donationForm.querySelector('.freq-btn.active').dataset.freq;
-                amountDescription.textContent = (activeFreq === 'mensuel') ? impactDescriptions['default_mensuel'] : impactDescriptions['default_unique'];
+                amountDescription.textContent =
+                    (activeFreq === 'mensuel')
+                        ? impactDescriptions['default_mensuel']
+                        : impactDescriptions['default_unique'];
             }
         });
 
-        // Initialisation du don unique
+        // Initialisation
         const uniqueBtn = donationForm.querySelector('.freq-btn[data-freq="unique"]');
         if (uniqueBtn) uniqueBtn.classList.add('active');
         if (amountDescription) amountDescription.textContent = impactDescriptions['default_unique'];
     }
-});s
 
+});
