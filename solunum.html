@@ -7,66 +7,137 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
+<!-- HEADER UNIFIÉ -->
 <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html"><img src="logo_mac.png" alt="Logo MAC"></a>
-      </div>
-      <ul class="menu">
-        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-        <li><a href="missions.html"><i class="fas fa-bullseye"></i> Missions</a></li>
-        <li><a href="equipe.html"><i class="fas fa-users"></i> Qui sommes-nous</a></li>
-        <li><a href="adhesion.html"><i class="fas fa-user-plus"></i> Adhérer</a></li>
-      </ul>
-      <div class="burger"><i class="fas fa-bars"></i></div>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="logo_mac.png" alt="Logo MAC"></a>
+    </div>
+
+    <ul class="menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="missions.html"><i class="fas fa-bullseye"></i> Missions</a></li>
+      <li><a href="equipe.html"><i class="fas fa-users"></i> Qui sommes-nous</a></li>
+
+      <li class="has-mega-menu">
+        <a href="#"><i class="fas fa-tasks"></i> Nos Activités <i class="fas fa-chevron-down"></i></a>
+
+        <div class="mega-menu">
+          <div class="mega-container">
+
+            <div class="mega-links">
+              <a href="retd.html" class="mega-item" data-target="act-retd">
+                <span class="mega-icon"><i class="fas fa-microscope"></i></span> Recherche & Développement
+              </a>
+              <a href="actions.html" class="mega-item" data-target="act-actions">
+                <span class="mega-icon"><i class="fas fa-users-cog"></i></span> Actions citoyennes
+              </a>
+              <a href="solunum.html" class="mega-item" data-target="act-solunum">
+                <span class="mega-icon"><i class="fas fa-laptop-code"></i></span> Solutions numériques
+              </a>
+            </div>
+
+            <div class="mega-content">
+              <div id="act-default" class="act-desc active">
+                <h3>Découvrez nos pôles</h3>
+                <p>Survolez une activité pour voir les détails.</p>
+              </div>
+
+              <div id="act-retd" class="act-desc">
+                <h3>MAC_R&D</h3>
+                <p>Nos compétences se mobilisent pour produire des solutions innovantes.</p>
+                <img src="r&d.png" alt="R&D" style="width:100%;border-radius:5px;margin-top:10px;">
+              </div>
+
+              <div id="act-actions" class="act-desc">
+                <h3>Actions citoyennes</h3>
+                <p>Engagement local et impact direct sur la communauté.</p>
+              </div>
+
+              <div id="act-solunum" class="act-desc">
+                <h3>Solutions numériques</h3>
+                <p>Développement d’outils digitaux pour le développement durable.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <li><a href="adhesion.html"><i class="fas fa-user-plus"></i> Adhérer</a></li>
+    </ul>
+
+    <div class="burger"><i class="fas fa-bars"></i></div>
+  </nav>
 </header>
 
+
+<!-- SECTION SOLUTIONS NUMÉRIQUES -->
 <main class="rd-container">
-    <header class="rd-header">
-        <h1>Nos <span class="text-green">Solutions Numériques</span></h1>
-        <p>Des outils technologiques conçus pour accompagner le développement durable et citoyen.</p>
-    </header>
 
-    <div class="rd-grid">
+  <header class="rd-header">
+    <h1>Nos <span class="text-green">Solutions Numériques</span></h1>
+    <p>Des outils technologiques conçus pour accompagner le développement durable, l’éducation et la participation citoyenne.</p>
+  </header>
 
-        <a href="#" class="rd-card">
-            <div class="rd-icon"><i class="fas fa-mobile-alt"></i></div>
-            <h3>Application Mobile MAC</h3>
-            <p>Plateforme citoyenne pour signaler, participer et suivre les actions locales.</p>
-            <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
-        </a>
+  <div class="rd-grid">
 
-        <a href="#" class="rd-card">
-            <div class="rd-icon"><i class="fas fa-database"></i></div>
-            <h3>Dashboard Communautaire</h3>
-            <p>Analyse en temps réel des actions, projets et indicateurs de développement.</p>
-            <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
-        </a>
+    <a href="#" class="rd-card">
+      <div class="rd-icon"><i class="fas fa-mobile-alt"></i></div>
+      <h3>Application Mobile MAC</h3>
+      <p>Plateforme citoyenne pour signaler, participer et suivre les actions locales.</p>
+      <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
+    </a>
 
-        <a href="#" class="rd-card">
-            <div class="rd-icon"><i class="fas fa-robot"></i></div>
-            <h3>Outils IA & Automatisation</h3>
-            <p>Modèles intelligents pour l’aide à la décision et la gestion des projets.</p>
-            <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
-        </a>
+    <a href="#" class="rd-card">
+      <div class="rd-icon"><i class="fas fa-database"></i></div>
+      <h3>Dashboard Communautaire</h3>
+      <p>Analyse en temps réel des actions, projets et indicateurs de développement.</p>
+      <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
+    </a>
 
-        <a href="#" class="rd-card">
-            <div class="rd-icon"><i class="fas fa-globe"></i></div>
-            <h3>Plateforme SoluNum</h3>
-            <p>Solutions numériques locales pour l’éducation, l’agriculture et la citoyenneté.</p>
-            <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
-        </a>
+    <a href="#" class="rd-card">
+      <div class="rd-icon"><i class="fas fa-robot"></i></div>
+      <h3>Outils IA & Automatisation</h3>
+      <p>Modèles intelligents pour l’aide à la décision et la gestion des projets.</p>
+      <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
+    </a>
 
-    </div>
+    <a href="#" class="rd-card">
+      <div class="rd-icon"><i class="fas fa-globe"></i></div>
+      <h3>Plateforme SoluNum</h3>
+      <p>Solutions numériques locales pour l’éducation, l’agriculture et la citoyenneté.</p>
+      <span class="rd-link">En savoir plus <i class="fas fa-arrow-right"></i></span>
+    </a>
+
+  </div>
+
 </main>
 
+
+<!-- FOOTER UNIFIÉ -->
 <footer class="footer">
+  <div class="footer-inner">
     <p>&copy; 2025 Mouvement Avenir Citoyen (MAC). Tous droits réservés.</p>
+
+    <a href="mailto:mac.asso@hotmail.com" class="footer-mail">
+      <i class="fas fa-envelope"></i> mac.asso@hotmail.com
+    </a>
+
+    <div class="footer-social">
+      <a href="https://facebook.com/mac" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/MAC225ci" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/mouvementavenircitoyen/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCHBwafaPflgC2n2GKJMOdjQ" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@mouvement_avenir_citoyen" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
