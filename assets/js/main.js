@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===== ONGLETS MEDIATHEQUE =====
   const tabs = document.querySelectorAll(".media-tabs button");
   const galleryItems = document.querySelectorAll(".gallery-grid [data-cat]");
-  if (tabs.length) {
+  if (tabs.length && galleryItems.length) {
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
         tabs.forEach((t) => t.classList.remove("active"));
@@ -65,5 +65,53 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     });
+  }
+
+  // ===== FILTRES NOS REALISATIONS (secteur + recherche texte) =====
+  const realTabs = document.querySelectorAll(".realisation-tabs button");
+  const realCards = document.querySelectorAll(".realisations-grid [data-cat]");
+  const realSearch = document.getElementById("realisationSearch");
+  const realCount = document.getElementById("realisationCount");
+  const realEmpty = document.getElementById("realisationEmpty");
+
+  if (realCards.length) {
+    let currentFilter = "all";
+
+    function applyRealisationFilters() {
+      const query = realSearch ? realSearch.value.trim().toLowerCase() : "";
+      let visible = 0;
+
+      realCards.forEach(function (card) {
+        const matchesCat = currentFilter === "all" || card.dataset.cat === currentFilter;
+        const haystack = (card.dataset.search || card.textContent || "").toLowerCase();
+        const matchesSearch = query === "" || haystack.includes(query);
+        const show = matchesCat && matchesSearch;
+        card.style.display = show ? "flex" : "none";
+        if (show) visible++;
+      });
+
+      if (realCount) {
+        realCount.textContent =
+          visible + (visible > 1 ? " réalisations trouvées" : " réalisation trouvée");
+      }
+      if (realEmpty) {
+        realEmpty.classList.toggle("show", visible === 0);
+      }
+    }
+
+    realTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        realTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        currentFilter = tab.dataset.filter;
+        applyRealisationFilters();
+      });
+    });
+
+    if (realSearch) {
+      realSearch.addEventListener("input", applyRealisationFilters);
+    }
+
+    applyRealisationFilters();
   }
 });
