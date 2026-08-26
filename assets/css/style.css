@@ -446,6 +446,73 @@ textarea{ resize:vertical; min-height:120px; }
 .legal-content p, .legal-content li{ color:var(--ink-soft); margin-bottom:12px; }
 .legal-content li{ margin-left:20px; }
 
+/* =================== REALISATIONS =================== */
+.realisations-toolbar{
+  max-width:1180px; margin:0 auto; padding: 70px 24px 10px;
+  display:flex; flex-direction:column; gap:26px; align-items:center;
+}
+.realisations-search{
+  width:100%; max-width:440px; position:relative;
+}
+.realisations-search i{
+  position:absolute; left:18px; top:50%; transform:translateY(-50%); color: var(--ink-soft); font-size:0.9rem;
+}
+.realisations-search input{ padding-left:44px; border-radius:999px; }
+.realisations-count{
+  font-family: var(--font-mono); font-size:0.78rem; color: var(--ink-soft);
+  text-align:center; max-width:1180px; margin:0 auto; padding:0 24px 30px;
+}
+.realisations-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:26px;
+  max-width:1180px; margin:0 auto; padding: 0 24px 30px;
+}
+.realisation-card{
+  background:#fff; border:1px solid var(--line); border-radius: var(--radius);
+  overflow:hidden; box-shadow: var(--shadow); display:flex; flex-direction:column;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.realisation-card:hover{ transform:translateY(-6px); box-shadow: var(--shadow-lg); }
+.realisation-card .realisation-img{ position:relative; }
+.realisation-card img{ height:200px; width:100%; object-fit:cover; }
+.realisation-status{
+  position:absolute; top:14px; right:14px;
+  font-family:var(--font-mono); font-size:0.66rem; text-transform:uppercase; letter-spacing:.05em;
+  padding:5px 12px; border-radius:999px; background:rgba(21,24,27,0.75); color:#fff;
+}
+.realisation-status.termine{ background: var(--green-dark); }
+.realisation-status.encours{ background: var(--orange-dark); }
+.realisation-body{ padding:24px; display:flex; flex-direction:column; flex:1; }
+.realisation-tag{
+  align-self:flex-start; font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase;
+  letter-spacing:.05em; padding:5px 12px; border-radius:999px; margin-bottom:14px;
+  background: var(--orange-light); color: var(--orange-dark);
+}
+.realisation-tag.citoyennete{ background: var(--green-light); color: var(--green-dark); }
+.realisation-tag.numerique{ background: var(--cream-2); color: var(--ink-soft); }
+.realisation-tag.entrepreneuriat{ background: var(--orange-light); color: var(--orange-dark); }
+.realisation-tag.environnement{ background: var(--green-light); color: var(--green-dark); }
+.realisation-tag.education{ background: var(--orange-light); color: var(--orange-dark); }
+.realisation-tag.communication{ background: rgba(201,162,39,0.14); color: var(--gold); }
+.realisation-tag.rd{ background: var(--anthracite); color:#fff; }
+.realisation-body h3{ font-size:1.1rem; margin-bottom:10px; }
+.realisation-body p{ font-size:0.92rem; flex:1; }
+.realisation-loc{ font-size:0.82rem; color:var(--ink-soft); margin-top:10px; display:flex; align-items:center; gap:6px; }
+.realisation-loc i{ color: var(--orange); }
+.realisation-meta{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-top:18px; padding-top:16px; border-top:1px solid var(--line);
+}
+.realisation-meta .realisation-date{ font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); }
+.realisation-meta a{ font-weight:700; font-size:0.85rem; color: var(--orange-dark); display:inline-flex; align-items:center; gap:6px; }
+.realisation-meta a:hover{ color: var(--orange); gap:9px; }
+.realisation-empty{
+  display:none; text-align:center; padding:60px 24px; color:var(--ink-soft);
+  max-width:1180px; margin:0 auto;
+}
+.realisation-empty.show{ display:block; }
+@media (max-width:960px){ .realisations-grid{ grid-template-columns:repeat(2,1fr);} }
+@media (max-width:600px){ .realisations-grid{ grid-template-columns:1fr;} }
+
 /* =================== UTILS =================== */
 .mt-0{ margin-top:0 !important; }
 .text-center{ text-align:center; }
